@@ -1,6 +1,7 @@
 function transformationFio(){
     let inputFio = document.getElementById('fio').value; // получили строчку
-    let inputFioTrans = inputFio.toLowerCase().trim(); // понизили регистр и удалили пробелы в начале и конце строки
+    let inputFioTrans1 = inputFio.toLowerCase().trim(); // понизили регистр и удалили пробелы в начале и конце строки
+    let inputFioTrans = inputFioTrans1.replace(/\s+/g, ' '); // удаляем лишние пробелы между ФИО
     let arrayFio1 = inputFioTrans.split(" "); // превратили строчку в массив
     let stringResult = ""; 
 
@@ -15,6 +16,7 @@ function transformationFio(){
     let arrayFio2 = trimFio.split(" "); // превратили строчку в массив
 
     for(let i = 0; i < arrayFio2.length; i++) { //выводим массив в input-ы
+        console.log("2");
         if(i == 0){
             document.getElementById('familia').value = arrayFio2[i];
         } else if(i == 1){
